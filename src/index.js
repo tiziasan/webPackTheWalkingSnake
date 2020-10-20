@@ -4,7 +4,7 @@ import {setStyle} from './styler';
 import {setHTML} from './components';
 {
   setHTML();
-  var snake = [
+  let snake = [
     {
       x: 160,
       y: 160,
@@ -12,11 +12,11 @@ import {setHTML} from './components';
 
   let foodX;
   let foodY;
-  var score = 0;
+  let score = 0;
   let changingDirection = false;
   let dx = 80;
   let dy = 0;
-  var gameOver = false;
+  let gameOver = false;
   let gameCanvas = document.getElementById('gameCanvas');
   let divScore = document.getElementById('score');
   let ctx = gameCanvas.getContext('2d');
@@ -25,6 +25,7 @@ import {setHTML} from './components';
     gameOver = false;
     main();
     createFood();
+
   }
 
     function main() {
@@ -151,7 +152,7 @@ import {setHTML} from './components';
   function didGameEnd() {
 
     let message = new alertMessage();
-    for (let i = 4; i < snake.length; i++) {
+    for (let i = 3; i < snake.length; i++) {
       if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
         snake = [
           {
