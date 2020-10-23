@@ -1,21 +1,21 @@
 function setHTML() {
-  let info  = document.createElement('h5');
+  const info  = document.createElement('h5');
   info.innerText = 'Vai a schermo intero per avere la massima esperienza!';
-  let btnPlay = document.createElement('button');
+  const btnPlay = document.createElement('button');
   btnPlay.innerText = 'Play Game!';
   btnPlay.addEventListener('click', start);
 
-  let labelSpeed = document.createElement('label');
+  const labelSpeed = document.createElement('label');
   labelSpeed.innerText = 'Select the speed    ';
 
-  let selectSpeed = document.createElement('select');
+  const selectSpeed = document.createElement('select');
   selectSpeed.id = 'speed';
-  let optionSpeed1 = document.createElement('option');
-  let optionSpeed2 = document.createElement('option');
-  let optionSpeed3 = document.createElement('option');
-  let optionSpeed4 = document.createElement('option');
-  let optionSpeed5 = document.createElement('option');
-  let optionSpeed6 = document.createElement('option');
+  const optionSpeed1 = document.createElement('option');
+  const optionSpeed2 = document.createElement('option');
+  const optionSpeed3 = document.createElement('option');
+  const optionSpeed4 = document.createElement('option');
+  const optionSpeed5 = document.createElement('option');
+  const optionSpeed6 = document.createElement('option');
   optionSpeed1.text = 'Regular';
   optionSpeed2.text = 'Fast';
   optionSpeed3.text = 'Slow';
