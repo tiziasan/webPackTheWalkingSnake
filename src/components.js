@@ -1,5 +1,5 @@
 function setHTML() {
-  const info  = document.createElement('h5');
+  const info = document.createElement('h5');
   info.innerText = 'Vai a schermo intero per avere la massima esperienza!';
   const btnPlay = document.createElement('button');
   btnPlay.innerText = 'Play Game!';
@@ -40,6 +40,5 @@ function setHTML() {
   document.body.appendChild(btnPlay);
 
 }
-
 
 export {setHTML};

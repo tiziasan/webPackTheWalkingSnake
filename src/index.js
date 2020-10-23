@@ -92,7 +92,7 @@ import {setHTML} from './components';
   function moveBullet() {
     bulletX += 80;
     let hitRightWall = bulletX > gameCanvas.width - 80;
-    if (hitRightWall){
+    if (hitRightWall) {
       bulletX = 80;
     }
   }
@@ -181,11 +181,12 @@ import {setHTML} from './components';
     let hitRightWall = snake[0].x > gameCanvas.width - 80;
     let hitTopWall = snake[0].y < 0;
     let hitBottomWall = snake[0].y > gameCanvas.height - 80;
-    let hitBullet = snake[0].x === (bulletX -80) && snake[0].y === bulletY;
+    let hitBullet = snake[0].x === (bulletX - 80) && snake[0].y === bulletY;
     let hitFire = snake[0].x === fireX && snake[0].y === fireY;
     let hitFilo = snake[0].x === filoX && snake[0].y === filoY;
 
-    if (hitLeftWall || hitRightWall || hitTopWall || hitBottomWall || hitFire || hitFilo || hitBullet) {
+    if (hitLeftWall || hitRightWall || hitTopWall || hitBottomWall || hitFire ||
+        hitFilo || hitBullet) {
       snake = [
         {
           x: 320,
@@ -221,7 +222,7 @@ import {setHTML} from './components';
     fireY = randomTen(0, gameCanvas.height - 80);
     let fireIsOnFood = fireX === foodX && fireY === foodY;
     let fireIsOnFilo = fireX === filoX && fireY === filoY;
-    if (fireIsOnFilo || fireIsOnFood){
+    if (fireIsOnFilo || fireIsOnFood) {
       createFire();
       createFilo();
     }
