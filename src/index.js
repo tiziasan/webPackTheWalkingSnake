@@ -89,14 +89,6 @@ import {setHTML} from './components';
     }
   }
 
-  function moveBullet() {
-    bulletX += 80;
-    let hitRightWall = bulletX > gameCanvas.width - 80;
-    if (hitRightWall) {
-      bulletX = 80;
-    }
-  }
-
   function changeDirection(event) {
     if (changingDirection) return;
     changingDirection = true;
@@ -181,12 +173,14 @@ import {setHTML} from './components';
     let hitRightWall = snake[0].x > gameCanvas.width - 80;
     let hitTopWall = snake[0].y < 0;
     let hitBottomWall = snake[0].y > gameCanvas.height - 80;
-    let hitBullet = snake[0].x === (bulletX - 80) && snake[0].y === bulletY;
+    let hitBullet1 = snake[0].x === (bulletX - 80) && snake[0].y === bulletY;
+    let hitBullet2 = snake[0].x === (bulletX - 160) && snake[0].y === bulletY;
+
     let hitFire = snake[0].x === fireX && snake[0].y === fireY;
     let hitFilo = snake[0].x === filoX && snake[0].y === filoY;
 
     if (hitLeftWall || hitRightWall || hitTopWall || hitBottomWall || hitFire ||
-        hitFilo || hitBullet) {
+        hitFilo || hitBullet1 || hitBullet2) {
       snake = [
         {
           x: 320,
@@ -201,6 +195,14 @@ import {setHTML} from './components';
 
   function randomTen(min, max) {
     return Math.round((Math.random() * (max - min) + min) / 80) * 80;
+  }
+
+  function moveBullet() {
+    bulletX += 80;
+    let hitRightWall = bulletX > gameCanvas.width - 80;
+    if (hitRightWall) {
+      bulletX = 80;
+    }
   }
 
   function createFood() {
